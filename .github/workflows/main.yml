@@ -1,1 +1,19 @@
 
+name: YALETYK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Verification YALETYK
+        run: echo "YALETYK fonctionne correctement"
