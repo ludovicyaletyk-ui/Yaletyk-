@@ -1,5 +1,5 @@
 
-name: YALETYK
+name: YALETYK Build
 
 on:
   push:
@@ -8,12 +8,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  verification:
+  build:
+    name: Build Job
     runs-on: ubuntu-latest
 
     steps:
-      - name: Recuperer le code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Verification YALETYK
-        run: echo "YALETYK fonctionne correctement"
+      - name: Verify project files
+        run: |
+          echo "YALETYK build started"
+          test -f Main.html
+          echo "YALETYK build successful"
