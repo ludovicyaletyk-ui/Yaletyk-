@@ -8,6 +8,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le projet
+        uses: actions/checkout@v4
+
+      - name: Verification
+        run: echo "YALETYK workflow fonctionne"
+
+name: YALETYK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
   verification:
     runs-on: ubuntu-latest
 
